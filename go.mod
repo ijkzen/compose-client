@@ -3,8 +3,7 @@ module github.com/ijkzen/compose-client
 go 1.22.2
 
 require (
-	github.com/compose-spec/compose-go v1.20.2
-	github.com/compose-spec/compose-go/v2 v2.1.6 // indirect
+	github.com/compose-spec/compose-go/v2 v2.1.6
 	github.com/docker/cli v27.1.2+incompatible
 	github.com/docker/compose/v2 v2.29.2
 )

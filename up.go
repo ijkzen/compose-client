@@ -12,6 +12,8 @@ import (
 	"github.com/docker/compose/v2/pkg/compose"
 )
 
+const COMPOSE_CLIENT_LABEL = "com.compose.client.label"
+
 func Up(content []byte, projectName string) error {
 	composeFilePath, err := createComposeFile(content, projectName)
 	if err != nil {
@@ -57,6 +59,7 @@ func Up(content []byte, projectName string) error {
 			api.WorkingDirLabel:  project.WorkingDir,
 			api.ConfigFilesLabel: strings.Join(project.ComposeFiles, ","),
 			api.OneoffLabel:      "False", // default, will be overridden by `run` command
+			COMPOSE_CLIENT_LABEL: "TRUE",
 		}
 		project.Services[name] = s
 	}
